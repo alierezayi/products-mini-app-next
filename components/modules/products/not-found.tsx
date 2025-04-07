@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function NotFound() {
-  return <div className="p-6">محصول پیدا نشد.</div>;
+  return (
+    <div className="size-full flex justify-center items-center">
+      <p>محصولی یافت نشد</p>
+    </div>
+  );
 }

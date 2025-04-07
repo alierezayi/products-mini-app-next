@@ -1,16 +1,24 @@
-import { Product } from "@/types/product";
+"use client";
+
+import useProducts from "@/hooks/useProducts";
 import Card from "./card";
+import { useEffect } from "react";
+import NotFound from "./not-found";
 
-interface Props {
-  products: Product[];
-}
+export default function List() {
+  const { filteredProducts, searchQuery, search } = useProducts();
 
-export default function List({ products }: Props) {
+  useEffect(() => {
+    search();
+  }, [searchQuery]);
+
   return (
     <div className="flex flex-col gap-2">
-      {products.map((product, i) => (
-        <Card key={i} product={product} />
-      ))}
+      {filteredProducts.length > 0 ? (
+        filteredProducts.map((product, i) => <Card key={i} product={product} />)
+      ) : (
+        <NotFound />
+      )}
     </div>
   );
 }
