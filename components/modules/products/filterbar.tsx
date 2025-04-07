@@ -11,9 +11,15 @@ export default function FilterBar() {
         <Funnel className="size-3.5" />
         <span>فیلتر ها</span>
       </div>
-      <div className="flex-1 flex overflow-hidden gap-1">
+      <div className="flex-1 flex overflow-auto custom-scrollbar gap-1">
         {filters.map((filter, i) => (
-          <Badge variant="secondary" key={i}>{filter}</Badge>
+          <Badge
+            variant="secondary"
+            className="border border-foreground/30"
+            key={i}
+          >
+            {filter}
+          </Badge>
         ))}
       </div>
     </div>

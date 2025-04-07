@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
 import "../styles/globals.css";
+import MobileMockup from "@/components/templates/mobile-mockup";
 
 const vazirmatn = Vazirmatn({
   subsets: ["arabic"],
@@ -21,8 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={`${vazirmatn.variable} antialiased text-sm`}>
-        {children}
+      <body
+        className={`${vazirmatn.variable} antialiased text-sm h-screen flex justify-center items-center`}
+      >
+        <MobileMockup>{children}</MobileMockup>
       </body>
     </html>
   );

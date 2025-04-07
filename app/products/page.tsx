@@ -6,8 +6,8 @@ import products from "@/data/products.json";
 
 export default function ProductsPage() {
   return (
-    <div className="bg-white h-full p-3 space-y-3.5">
-      <Header />
+    <div className="bg-white h-full space-y-3.5">
+      <Header title="لیست محصولات" />
       <Searchbar />
       <FilterBar />
       <List products={products} />

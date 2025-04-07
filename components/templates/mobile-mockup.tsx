@@ -9,7 +9,7 @@ export default function MobileMockup({ children }: Props) {
       <div className="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
       <div className="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
       <div className="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
-      <div className="rounded-[2rem] overflow-y-scroll custom-scrollbar size-full sm:w-[282px] sm:h-[572px] bg-white dark:bg-gray-800">
+      <div className="rounded-[2rem] overflow-y-scroll custom-scrollbar size-full sm:w-[282px] sm:h-[572px] bg-white dark:bg-gray-800 p-3">
         {children}
       </div>
     </div>
