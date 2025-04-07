@@ -3,13 +3,14 @@
 import { Input } from "@/components/ui/input";
 import useProducts from "@/hooks/useProducts";
 import { Search } from "lucide-react";
-import React from "react";
 
 export default function Searchbar() {
   const { searchQuery, setSearchQuery } = useProducts();
+
   return (
     <div className="relative">
       <Input
+        placeholder="جستجو..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />

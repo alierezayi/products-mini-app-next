@@ -1,8 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
 import useProducts from "@/hooks/useProducts";
 import Card from "./card";
-import { useEffect } from "react";
 import NotFound from "./not-found";
 
 export default function List() {
@@ -10,15 +10,15 @@ export default function List() {
 
   useEffect(() => {
     search();
-  }, [searchQuery]);
+  }, [searchQuery, search]);
+
+  if (!filteredProducts.length) return <NotFound />;
 
   return (
     <div className="flex flex-col gap-2">
-      {filteredProducts.length > 0 ? (
-        filteredProducts.map((product, i) => <Card key={i} product={product} />)
-      ) : (
-        <NotFound />
-      )}
+      {filteredProducts.map((product, index) => (
+        <Card key={product.id || index} product={product} />
+      ))}
     </div>
   );
 }
